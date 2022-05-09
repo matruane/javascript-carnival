@@ -28,4 +28,10 @@ const addMoleTo = (cell) => {
   cell.appendChild(mole)
 }
 
+const whackedMole = (e) => {
+  e.target.parentElement.removeChild(mole)
+  addMoleTo(getRandomCell())
+}
+
+mole.addEventListener('click', whackedMole)
 addMoleTo(getRandomCell())
