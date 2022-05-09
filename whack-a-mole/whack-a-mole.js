@@ -19,4 +19,11 @@ const createRandomIndex = (length) => {
   return Math.floor(Math.random() * length)
 }
 
-console.log((getRandomCell().innerText = 'blah'))
+const addMoleTo = (cell) => {
+  const element = document.createElement('img')
+  element.setAttribute('src', './mole.PNG')
+  element.setAttribute('id', 'mole')
+  cell.appendChild(element)
+}
+
+addMoleTo(getRandomCell())
