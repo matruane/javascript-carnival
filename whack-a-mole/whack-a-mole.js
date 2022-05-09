@@ -11,6 +11,10 @@ const mole = document.createElement('img')
 mole.setAttribute('src', './mole.PNG')
 mole.setAttribute('id', 'mole')
 
+// Add sound effect
+const whackAudio = new Audio()
+whackAudio.src = './whack-audio.wav'
+
 // build representation of board
 for (let i = 0; i < rows.length; i++) {
   board.push([...rows[i].cells])
@@ -29,6 +33,7 @@ const addMoleTo = (cell) => {
 }
 
 const whackedMole = (e) => {
+  whackAudio.play()
   e.target.parentElement.removeChild(mole)
   addMoleTo(getRandomCell())
 }
