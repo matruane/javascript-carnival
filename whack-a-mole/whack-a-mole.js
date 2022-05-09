@@ -6,6 +6,11 @@ const rows = document.getElementsByTagName('tr')
 const rowColLength = rows.length
 let board = []
 
+// create the mole
+const mole = document.createElement('img')
+mole.setAttribute('src', './mole.PNG')
+mole.setAttribute('id', 'mole')
+
 // build representation of board
 for (let i = 0; i < rows.length; i++) {
   board.push([...rows[i].cells])
@@ -20,10 +25,7 @@ const createRandomIndex = (length) => {
 }
 
 const addMoleTo = (cell) => {
-  const element = document.createElement('img')
-  element.setAttribute('src', './mole.PNG')
-  element.setAttribute('id', 'mole')
-  cell.appendChild(element)
+  cell.appendChild(mole)
 }
 
 addMoleTo(getRandomCell())
