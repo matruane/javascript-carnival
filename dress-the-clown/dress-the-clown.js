@@ -1,5 +1,11 @@
-  // -    -   -   -   -  //
- // JAVASCRIPT CARNIVAL //
+// -    -   -   -   -  //
+// JAVASCRIPT CARNIVAL //
 // -    -   -   -   -  //
 
-console.log("Dress The Clown!")
+const clownHead = document.querySelector('.dress-an-image.head')
+
+const changeClownHead = () => {
+  clownHead.src = './images/head1.png'
+}
+
+changeClownHead()
