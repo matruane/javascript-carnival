@@ -33,10 +33,17 @@ const addMoleTo = (cell) => {
 }
 
 const whackedMole = (e) => {
+  const parent = e.target.parentElement
+  let newCell
+
   const audioInstance = whackAudio.cloneNode()
   audioInstance.play()
-  e.target.parentElement.removeChild(mole)
-  addMoleTo(getRandomCell())
+
+  // Keep getting a random cell until its not the current cell
+  while ((newCell = getRandomCell()) === parent) {}
+
+  parent.removeChild(mole)
+  addMoleTo(newCell)
 }
 
 mole.addEventListener('click', whackedMole)
