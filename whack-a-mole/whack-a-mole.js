@@ -33,7 +33,8 @@ const addMoleTo = (cell) => {
 }
 
 const whackedMole = (e) => {
-  whackAudio.play()
+  const audioInstance = whackAudio.cloneNode()
+  audioInstance.play()
   e.target.parentElement.removeChild(mole)
   addMoleTo(getRandomCell())
 }
